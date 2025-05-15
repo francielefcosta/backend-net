@@ -43,6 +43,8 @@ app.UseDeveloperExceptionPage();
 // Use CORS
 app.UseCors("AllowFrontend");
 
+app.UseStaticFiles();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
