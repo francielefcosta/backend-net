@@ -1,0 +1,89 @@
+{
+  "aboutMe": {
+    "title": {
+      "default": "Olá, sou a",
+      "bold": "Franciele"
+    },
+    "description": "Sou desenvolvedora Front-end e nada me dá mais alegria do que ver o código rodando lindo, funcional e com uma interface que o usuário entende de primeira. Adoro criar experiências visuais intuitivas, responsivas e com aquele toque de capricho.",
+    "contact": {
+      "link": "/contatos",
+      "label": "Bora bater um papo?"
+    },
+    "techs": [
+      {
+        "tech": "react",
+        "color": "#000000",
+        "bgcolor": "#6BDDFA"
+      },
+      {
+        "tech": "next.js",
+        "color": "#FFFFFF",
+        "bgcolor": "#000000"
+      },
+      {
+        "tech": "typescript",
+        "color": "#FFFFFF",
+        "bgcolor": "#2F74C0"
+      },
+      {
+        "tech": "javascript",
+        "color": "#000000",
+        "bgcolor": "#EFD81D"
+      },
+      {
+        "tech": ".NET",
+        "color": "#FFFFFF",
+        "bgcolor": "#512BD4"
+      },
+      {
+        "tech": "unity",
+        "color": "#FFFFFF",
+        "bgcolor": "#000000"
+      },
+      {
+        "tech": "api rest",
+        "color": "#000000",
+        "bgcolor": "#E7E7E7"
+      }
+    ],
+    "pfp": {
+      "image": {
+        "url": "/profile.jpg",
+        "alt": "Foto de Perfil de Franciele. Desenvolvedora sorridente, apaixonada por tecnologia e café ☕"
+      },
+      "experience": {
+        "default": "anos de experiência",
+        "bold": "4+"
+      }
+    }
+  },
+  "projects": [
+    {
+      "slug": "react-store",
+      "name": "Site de Compras",
+      "url": "/store",
+      "image": {
+        "url": "/store/capa-store.png",
+        "alt": "Protótipo funcional de e-commerce com catálogo simulado, carrinho e checkout"
+      }
+    },
+    {
+      "slug": "vr-3d-game",
+      "name": "Jogo 3D com A-Frame",
+      "url": "/three",
+      "image": {
+        "url": "/aframe/three.png",
+        "alt": "Experiência interativa em WebGL com coleta de objetos em ambiente 3D"
+      }
+    },
+    {
+      "slug": "pacman-clone",
+      "name": "Pac-Man Clone",
+      "url": "/pacman",
+      "image": {
+        "url": "/pacman/pacman.png",
+        "alt": "Recriação do jogo Pac-Man com lógica de jogo e design responsivo"
+      }
+    }
+  ]
+}
