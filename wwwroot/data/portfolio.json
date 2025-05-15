@@ -65,7 +65,8 @@
       "image": {
         "url": "/store/capa-store.png",
         "alt": "Protótipo funcional de e-commerce com catálogo simulado, carrinho e checkout"
-      }
+      },
+      "description": "Protótipo de e-commerce com frontend em React e backend em .NET. Os produtos são carregados de uma API conectada ao MongoDB, com operações CRUD disponíveis via Swagger."
     },
     {
       "slug": "vr-3d-game",
@@ -74,7 +75,8 @@
       "image": {
         "url": "/aframe/three.png",
         "alt": "Experiência interativa em WebGL com coleta de objetos em ambiente 3D"
-      }
+      },
+      "description": "Experiência interativa usando A-Frame e WebGL, com movimentação em um ambiente 3D e coleta de objetos. Ideal para explorar conceitos de realidade virtual no navegador."
     },
     {
       "slug": "pacman-clone",
@@ -83,7 +85,8 @@
       "image": {
         "url": "/pacman/pacman.png",
         "alt": "Recriação do jogo Pac-Man com lógica de jogo e design responsivo"
-      }
+      },
+      "description": "Recriação do clássico Pac-Man feita com JavaScript puro, aplicando lógica de movimentação, colisão e pontuação em um layout responsivo e divertido."
     }
   ]
 }
