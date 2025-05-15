@@ -38,6 +38,8 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+app.UseDeveloperExceptionPage();
+
 // Use CORS
 app.UseCors("AllowFrontend");
 
