@@ -107,7 +107,6 @@ C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.csproj.CoreCompileInpu
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\scopedcss\bundle\backend.styles.css
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\compressed\0yulyb0yu6-8vpu7rag4w.gz
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -124,3 +123,6 @@ C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.pdb
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.genruntimeconfig.cache
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\ref\backend.dll
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.sourcelink.json
+C:\Users\franc\repos\backend-net\obj\Debug\net9.0\compressed\z9ugkzmvuz-ma43w7kmkm.gz
+C:\Users\franc\repos\backend-net\bin\Debug\net9.0\DotNetEnv.dll
+C:\Users\franc\repos\backend-net\bin\Debug\net9.0\Sprache.dll

@@ -1,18 +1,21 @@
 using Microsoft.OpenApi.Models;
 using MyProject.Services;
 
+
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração da string de conexão e nome do banco de dados
 string mongoConnectionString = builder.Configuration.GetConnectionString("MongoDbConnection");
-string databaseName = "MAODyO7UocjK3YTW"; // O nome do seu banco de dados
+string databaseName = "MAODyO7UocjK3YTW";
 
-// Configuração do CORS
+Console.WriteLine($"MongoDB Connection String: {mongoConnectionString}");
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000") // Permite o frontend rodando em localhost:3000
+        policy.WithOrigins("http://localhost:3000")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -22,10 +25,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddSingleton<MongoDbService>(sp =>
     new MongoDbService(mongoConnectionString, databaseName));
-
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -40,26 +39,22 @@ var app = builder.Build();
 
 app.UseDeveloperExceptionPage();
 
-// Use CORS
-app.UseCors("AllowFrontend");
+app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseRouting();
 
-app.UseHttpsRedirection();
+app.UseCors("AllowFrontend");
 
 app.UseSwagger();
+
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
-    c.RoutePrefix = string.Empty; // faz o SwaggerUI ficar em http://localhost:5007/
+     c.RoutePrefix = string.Empty; 
 });
 
-app.MapControllers(); // <-- necessário para os controllers funcionarem
+app.MapControllers();
 
 app.Run();

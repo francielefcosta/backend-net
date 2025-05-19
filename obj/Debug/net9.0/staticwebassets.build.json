@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vU+1t4jinYOfHDXskaMYZXdyJMT9Wz1RJLRNTfiaX7g=",
+  "Hash": "OglfNU4C1KSU66L6Xk8G/34vECLNcdSMu3N05RmOR0Y=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -17,33 +17,33 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\0yulyb0yu6-8vpu7rag4w.gz",
+      "Identity": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\z9ugkzmvuz-ma43w7kmkm.gz",
       "SourceId": "backend",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/backend",
-      "RelativePath": "index#[.{fingerprint=8vpu7rag4w}]?.html.gz",
+      "RelativePath": "data/portfolio#[.{fingerprint=ma43w7kmkm}]?.json.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html",
+      "RelatedAsset": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "p57gr2a3bk",
-      "Integrity": "w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20=",
+      "Fingerprint": "uhfhkya5jb",
+      "Integrity": "TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html"
+      "OriginalItemSpec": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json"
     },
     {
-      "Identity": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json",
       "SourceId": "backend",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\",
       "BasePath": "_content/backend",
-      "RelativePath": "index#[.{fingerprint}]?.html",
+      "RelativePath": "data/portfolio#[.{fingerprint}]?.json",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,22 +52,22 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8vpu7rag4w",
-      "Integrity": "jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o=",
+      "Fingerprint": "ma43w7kmkm",
+      "Integrity": "gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
+      "OriginalItemSpec": "wwwroot\\data\\portfolio.json"
     }
   ],
   "Endpoints": [
     {
-      "Route": "index.8vpu7rag4w.html",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\0yulyb0yu6-8vpu7rag4w.gz",
+      "Route": "data/portfolio.json",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\z9ugkzmvuz-ma43w7kmkm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001930501931"
+          "Quality": "0.000943396226"
         }
       ],
       "ResponseHeaders": [
@@ -77,19 +77,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "517"
+          "Value": "1059"
         },
         {
           "Name": "ETag",
-          "Value": "\"w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20=\""
+          "Value": "\"TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -101,31 +101,23 @@
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o=\""
+          "Value": "W/\"gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "8vpu7rag4w"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o="
+          "Value": "sha256-gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw="
         }
       ]
     },
     {
-      "Route": "index.8vpu7rag4w.html",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html",
+      "Route": "data/portfolio.json",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -134,43 +126,35 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "839"
+          "Value": "2909"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "\"jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o=\""
+          "Value": "\"gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "8vpu7rag4w"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o="
+          "Value": "sha256-gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw="
         }
       ]
     },
     {
-      "Route": "index.8vpu7rag4w.html.gz",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\0yulyb0yu6-8vpu7rag4w.gz",
+      "Route": "data/portfolio.json.gz",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\z9ugkzmvuz-ma43w7kmkm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -179,23 +163,23 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "517"
+          "Value": "1059"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "\"w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20=\""
+          "Value": "\"TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -208,27 +192,19 @@
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "8vpu7rag4w"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html.gz"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20="
+          "Value": "sha256-TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU="
         }
       ]
     },
     {
-      "Route": "index.html",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\0yulyb0yu6-8vpu7rag4w.gz",
+      "Route": "data/portfolio.ma43w7kmkm.json",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\z9ugkzmvuz-ma43w7kmkm.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001930501931"
+          "Quality": "0.000943396226"
         }
       ],
       "ResponseHeaders": [
@@ -238,19 +214,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "517"
+          "Value": "1059"
         },
         {
           "Name": "ETag",
-          "Value": "\"w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20=\""
+          "Value": "\"TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -262,23 +238,31 @@
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "W/\"jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o=\""
+          "Value": "W/\"gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "ma43w7kmkm"
+        },
+        {
+          "Name": "label",
+          "Value": "data/portfolio.json"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o="
+          "Value": "sha256-gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw="
         }
       ]
     },
     {
-      "Route": "index.html",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html",
+      "Route": "data/portfolio.ma43w7kmkm.json",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -287,35 +271,43 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "839"
+          "Value": "2909"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "\"jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o=\""
+          "Value": "\"gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "ma43w7kmkm"
+        },
+        {
+          "Name": "label",
+          "Value": "data/portfolio.json"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-jM6Y8+0xNzO6WFxfl2Pv16+hYH2zyIKf3Fyj0O7ke9o="
+          "Value": "sha256-gmvseHhgyqfThzeRDWOZWqdpUK+MrdNsYvgpzlIXLbw="
         }
       ]
     },
     {
-      "Route": "index.html.gz",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\0yulyb0yu6-8vpu7rag4w.gz",
+      "Route": "data/portfolio.ma43w7kmkm.json.gz",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\obj\\Debug\\net9.0\\compressed\\z9ugkzmvuz-ma43w7kmkm.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -324,23 +316,23 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "517"
+          "Value": "1059"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "application/json"
         },
         {
           "Name": "ETag",
-          "Value": "\"w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20=\""
+          "Value": "\"TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 14 May 2025 18:34:41 GMT"
+          "Value": "Thu, 15 May 2025 01:30:45 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -353,8 +345,16 @@
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "ma43w7kmkm"
+        },
+        {
+          "Name": "label",
+          "Value": "data/portfolio.json.gz"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-w9Reac6Q8sejaktvGgcIofasZxsUJQ/I4/9oo4lrk20="
+          "Value": "sha256-TlvsjlUVr02bQv5UIf533EzubfrYYDb4Pqhvl7VAheU="
         }
       ]
     }

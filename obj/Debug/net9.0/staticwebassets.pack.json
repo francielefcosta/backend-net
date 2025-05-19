@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
+      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\data\\portfolio.json",
+      "PackagePath": "staticwebassets\\data\\portfolio.json"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
