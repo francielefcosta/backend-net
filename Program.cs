@@ -9,8 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 string mongoConnectionString = builder.Configuration.GetConnectionString("MongoDbConnection");
 string databaseName = "MAODyO7UocjK3YTW";
 
-Console.WriteLine($"MongoDB Connection String: {mongoConnectionString}");
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
