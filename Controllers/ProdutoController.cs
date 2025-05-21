@@ -1,8 +1,8 @@
-// Controllers/ProdutoController.cs
+
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using MyProject.Services;
-using MyProject.Models;  // Corrigido para usar o namespace correto
+using MyProject.Models;
 
 namespace MyProject.Controllers
 {
@@ -18,8 +18,42 @@ namespace MyProject.Controllers
         }
 
         [HttpPost("CreateProduct")]
-        public async Task<IActionResult> CreateProduct([FromBody] Product product)
+        public async Task<IActionResult> CreateProduct([FromForm] CreateProductDto dto)
         {
+            var img = dto.Img;
+
+            if (img == null || img.Length == 0)
+            {
+                return BadRequest("Imagem não encontrada.");
+            }
+
+            // Define o caminho da pasta onde a imagem será salva
+            var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+
+            // Verifica se a pasta existe, caso contrário, cria
+            if (!Directory.Exists(uploadFolder))
+            {
+                Directory.CreateDirectory(uploadFolder);
+            }
+
+            // Gera nome único pra imagem
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(img.FileName);
+            var filePath = Path.Combine(uploadFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await img.CopyToAsync(stream);
+            }
+
+            var product = new Product
+            {
+                Name = dto.Name,
+                Price = dto.Price,
+                Description = dto.Description,
+                Quantity = dto.Quantity,
+                Img = $"/uploads/{fileName}" // Caminho relativo para acessar a imagem
+            };
+            
             await _mongoDbService.CreateProductAsync(product);
             return CreatedAtAction(nameof(CreateProduct), new { id = product.Id }, product);
         }

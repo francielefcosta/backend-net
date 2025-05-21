@@ -59,6 +59,16 @@
   },
   "projects": [
     {
+      "slug": "react-dashboard",
+      "name": "Painel de Administração do E-commerce",
+      "url": "/dashboard",
+      "image": {
+        "url": "/dashboard/capa-dashboard.png",
+        "alt": "Protótipo funcional de um Painel de Administração do E-commerce"
+      },
+      "description": "Painel admin React que consome uma API .NET para realizar operações CRUD em produtos armazenados no MongoDB. Permite gerenciamento completo dos itens do e-commerce."
+    },
+    {
       "slug": "react-store",
       "name": "Site de Compras",
       "url": "/store",
@@ -66,7 +76,7 @@
         "url": "/store/capa-store.png",
         "alt": "Protótipo funcional de e-commerce com catálogo simulado, carrinho e checkout"
       },
-      "description": "Protótipo de e-commerce com frontend em React e backend em .NET. Os produtos são carregados de uma API conectada ao MongoDB, com operações CRUD disponíveis via Swagger."
+      "description": "Protótipo de e-commerce com frontend em React e backend em .NET. Os produtos são gerenciados por uma API integrada ao MongoDB, com operações CRUD realizadas por meio de um painel administrativo."
     },
     {
       "slug": "vr-3d-game",

@@ -6,8 +6,13 @@ DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
-string mongoConnectionString = builder.Configuration.GetConnectionString("MongoDbConnection");
-string databaseName = "MAODyO7UocjK3YTW";
+string? mongoConnectionString = builder.Configuration.GetConnectionString("MongoDbConnection");
+string databaseName = "database_dev_fran";
+
+if (string.IsNullOrEmpty(mongoConnectionString))
+{
+    throw new Exception("A connection string MongoDbConnection não foi encontrada!");
+}
 
 builder.Services.AddCors(options =>
 {

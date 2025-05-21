@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\data\\portfolio.json"
     },
     {
+      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
