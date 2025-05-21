@@ -5,6 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace MyProject.Models
 {
+    [BsonIgnoreExtraElements]
     public class Product
     {
         [BsonId]
@@ -28,6 +29,7 @@ namespace MyProject.Models
 
     }
 
+    [BsonIgnoreExtraElements]
     public class CreateProductDto
     {
         public string Name { get; set; } = string.Empty;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KKL0YnVXklLv3L4yh7Mrvzwag3FGpfgqbf3A23oXe7k=",
+  "Hash": "zDpSXfUDmrKG8mLmsPN1j0cfOzgB35lWj1ETgIkjH8c=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -59,12 +59,33 @@
       "OriginalItemSpec": "wwwroot\\data\\portfolio.json"
     },
     {
-      "Identity": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
+      "Identity": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\1747844549592-i7-10700k.jpg",
       "SourceId": "backend",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\",
       "BasePath": "_content/backend",
-      "RelativePath": "uploads/2ea6f180-a8ea-481c-97b4-292fd271c464#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/1747844549592-i7-10700k#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ohhi1d44w9",
+      "Integrity": "9KElYdj+cJCzSkLB9OAMRGOnlUTpbRavHlGrTqtDe64=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1747844549592-i7-10700k.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\",
+      "BasePath": "_content/backend",
+      "RelativePath": "uploads/c353abac-fd17-4336-a6ca-1775aaabdce4#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -77,7 +98,7 @@
       "Integrity": "XnLvy3vriPMPo63K8ghFPa4sCijLK5H/hmkPNdlQNZU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg"
     }
   ],
   "Endpoints": [
@@ -380,8 +401,90 @@
       ]
     },
     {
-      "Route": "uploads/2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
+      "Route": "uploads/1747844549592-i7-10700k.jpg",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\1747844549592-i7-10700k.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63252"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9KElYdj+cJCzSkLB9OAMRGOnlUTpbRavHlGrTqtDe64=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 21 May 2025 16:22:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9KElYdj+cJCzSkLB9OAMRGOnlUTpbRavHlGrTqtDe64="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1747844549592-i7-10700k.ohhi1d44w9.jpg",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\1747844549592-i7-10700k.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63252"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9KElYdj+cJCzSkLB9OAMRGOnlUTpbRavHlGrTqtDe64=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 21 May 2025 16:22:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ohhi1d44w9"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1747844549592-i7-10700k.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9KElYdj+cJCzSkLB9OAMRGOnlUTpbRavHlGrTqtDe64="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c353abac-fd17-4336-a6ca-1775aaabdce4.jpg",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -402,7 +505,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 15:20:24 GMT"
+          "Value": "Wed, 21 May 2025 15:21:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -417,8 +520,8 @@
       ]
     },
     {
-      "Route": "uploads/2ea6f180-a8ea-481c-97b4-292fd271c464.yvq1koovbk.jpg",
-      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
+      "Route": "uploads/c353abac-fd17-4336-a6ca-1775aaabdce4.yvq1koovbk.jpg",
+      "AssetFile": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -439,7 +542,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 15:20:24 GMT"
+          "Value": "Wed, 21 May 2025 15:21:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -453,7 +556,7 @@
         },
         {
           "Name": "label",
-          "Value": "uploads/2ea6f180-a8ea-481c-97b4-292fd271c464.jpg"
+          "Value": "uploads/c353abac-fd17-4336-a6ca-1775aaabdce4.jpg"
         },
         {
           "Name": "integrity",

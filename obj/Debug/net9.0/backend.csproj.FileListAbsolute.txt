@@ -126,3 +126,4 @@ C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.sourcelink.json
 C:\Users\franc\repos\backend-net\bin\Debug\net9.0\DotNetEnv.dll
 C:\Users\franc\repos\backend-net\bin\Debug\net9.0\Sprache.dll
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\compressed\z9ugkzmvuz-1yx1q8ggkr.gz
+C:\Users\franc\repos\backend-net\bin\Debug\net9.0\package-lock.json

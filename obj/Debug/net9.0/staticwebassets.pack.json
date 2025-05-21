@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets\\data\\portfolio.json"
     },
     {
-      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg",
-      "PackagePath": "staticwebassets\\uploads\\2ea6f180-a8ea-481c-97b4-292fd271c464.jpg"
+      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\1747844549592-i7-10700k.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1747844549592-i7-10700k.jpg"
+    },
+    {
+      "Id": "C:\\Users\\franc\\repos\\backend-net\\wwwroot\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c353abac-fd17-4336-a6ca-1775aaabdce4.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
