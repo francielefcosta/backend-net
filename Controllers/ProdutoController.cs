@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using MyProject.Services;
 using MyProject.Models;
+using System.Globalization;
+using MongoDB.Bson;
 
 namespace MyProject.Controllers
 {
@@ -11,52 +13,165 @@ namespace MyProject.Controllers
     public class ProdutoController : ControllerBase
     {
         private readonly MongoDbService _mongoDbService;
+        private readonly CloudinaryService _cloudinary;
 
-        public ProdutoController(MongoDbService mongoDbService)
+        public ProdutoController(MongoDbService mongoDbService, CloudinaryService cloudinary)
         {
             _mongoDbService = mongoDbService;
+            _cloudinary = cloudinary;
         }
 
         [HttpPost("CreateProduct")]
-        public async Task<IActionResult> CreateProduct([FromForm] CreateProductDto dto)
+        public async Task<IActionResult> CreateProduct()
         {
-            var img = dto.Img;
+            var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
+
+            var form = HttpContext.Request.Form;
+
+            var senha = form["AdminPassword"].ToString();
+            var name = form["Name"].ToString();
+            var description = form["Description"].ToString();
+            var priceString = form["Price"].ToString();
+            var quantityString = form["Quantity"].ToString();
+
+            bool isValidPrice = decimal.TryParse(priceString, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal precoDecimal);
+            bool isValidQuantity = int.TryParse(quantityString, out var quantity);
+
+            if (!isValidPrice || !isValidQuantity)
+            {
+                return BadRequest("Preço ou quantidade inválidos.");
+            }
+
+            // 🔐 Se a senha estiver incorreta, retorna fake
+            if (senha != senhaCerta)
+            {
+                var productFake = new Product
+                {
+                    Id = ObjectId.GenerateNewId().ToString(),
+                    Name = name,
+                    Price = precoDecimal,
+                    Description = description,
+                    Quantity = quantity,
+                    Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
+                };
+
+                return Ok(productFake);
+            }
+
+            // 🎯 Aqui a senha está certa, então seguimos com o binding completo
+            var img = form.Files.GetFile("Img");
 
             if (img == null || img.Length == 0)
             {
                 return BadRequest("Imagem não encontrada.");
             }
 
-            // Define o caminho da pasta onde a imagem será salva
-            var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+            string imageUrl;
 
-            // Verifica se a pasta existe, caso contrário, cria
-            if (!Directory.Exists(uploadFolder))
+            try
             {
-                Directory.CreateDirectory(uploadFolder);
+                imageUrl = await _cloudinary.UploadImageAsync(img);
             }
-
-            // Gera nome único pra imagem
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(img.FileName);
-            var filePath = Path.Combine(uploadFolder, fileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
+            catch (Exception ex)
             {
-                await img.CopyToAsync(stream);
+                return BadRequest($"Falha ao enviar imagem: {ex.Message}");
             }
 
             var product = new Product
             {
-                Name = dto.Name,
-                Price = dto.Price,
-                Description = dto.Description,
-                Quantity = dto.Quantity,
-                Img = $"/uploads/{fileName}" // Caminho relativo para acessar a imagem
+                Name = name,
+                Price = precoDecimal,
+                Description = description,
+                Quantity = quantity,
+                Img = imageUrl
             };
-            
+
             await _mongoDbService.CreateProductAsync(product);
+
             return CreatedAtAction(nameof(CreateProduct), new { id = product.Id }, product);
         }
+
+        
+        [HttpPut("UpdateProductId/{id}")]
+        public async Task<IActionResult> Put(string id)
+        {
+            var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
+
+            var form = HttpContext.Request.Form;
+
+            var senha = form["AdminPassword"].ToString();
+            var name = form["Name"].ToString();
+            var description = form["Description"].ToString();
+            var priceString = form["Price"].ToString();
+            var quantityString = form["Quantity"].ToString();
+
+            bool isValidPrice = decimal.TryParse(priceString, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal precoDecimal);
+            bool isValidQuantity = int.TryParse(quantityString, out var quantity);
+
+            if (!isValidPrice || !isValidQuantity)
+            {
+                return BadRequest("Preço ou quantidade inválidos.");
+            }
+
+            // 🔐 Se a senha estiver incorreta, retorna fake
+            if (senha != senhaCerta)
+            {
+                var productFake = new Product
+                {
+                    Id = id,
+                    Name = name,
+                    Price = precoDecimal,
+                    Description = description,
+                    Quantity = quantity,
+                    Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
+                };
+
+                return Ok(productFake);
+            }
+
+            var colecao = _mongoDbService.GetCollection<Product>("products");
+            var produtoExistente = await colecao.Find(p => p.Id == id).FirstOrDefaultAsync();
+
+            if (produtoExistente == null)
+            {
+                return NotFound();
+            }
+
+            string imgUrl = produtoExistente.Img;
+            var img = form.Files.GetFile("Img");
+
+            if (img != null && img.Length > 0)
+            {
+                try
+                {
+                    await _cloudinary.DeleteImageAsync(produtoExistente.Img);
+                    imgUrl = await _cloudinary.UploadImageAsync(img);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"Erro ao atualizar imagem: {ex.Message}");
+                }
+            }
+
+            var product = new Product
+            {
+                Id = produtoExistente.Id,
+                Name = name,
+                Price = precoDecimal,
+                Description = description,
+                Quantity = quantity,
+                Img = imgUrl
+            };
+
+            var resultado = await colecao.ReplaceOneAsync(p => p.Id == id, product);
+            if (resultado.MatchedCount == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(product);
+        }
+
 
         // GET api/produto
         [HttpGet("GetProducts")]
@@ -80,30 +195,61 @@ namespace MyProject.Controllers
             return Ok(produto);
         }
 
-        // PUT api/produto/{id}
-        [HttpPut("UpdateProductId/{id}")]
-        public async Task<IActionResult> Put(string id, [FromBody] Product produtoAtualizado)
+        // DELETE api/produto/{id}
+        [HttpDelete("DeleteProductId/{id}")]
+        public async Task<IActionResult> Delete(string id, [FromBody] ProductDelete adm)
         {
+            Console.WriteLine(adm.AdminPassword);
+
+            var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
+
+            // Se a senha for diferente, não faz nada e responde OK (fake)
+            if (adm.AdminPassword != senhaCerta)
+            {
+                return Ok(new
+                {
+                    id,
+                    message = "Produto excluído com sucesso!"
+                });
+            }
+
             var colecao = _mongoDbService.GetCollection<Product>("products");
-            var resultado = await colecao.ReplaceOneAsync(p => p.Id == id, produtoAtualizado);
-            if (resultado.MatchedCount == 0)
+
+            //Pegar valores do Produto
+            var produto = await colecao.Find(p => p.Id == id).FirstOrDefaultAsync();
+            if (produto == null)
             {
                 return NotFound();
             }
-            return NoContent();
-        }
 
-        // DELETE api/produto/{id}
-        [HttpDelete("DeleteProductId/{id}")]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var colecao = _mongoDbService.GetCollection<Product>("products");
+            //Apagar o produto do banco
             var resultado = await colecao.DeleteOneAsync(p => p.Id == id);
             if (resultado.DeletedCount == 0)
             {
                 return NotFound();
             }
-            return NoContent();
+
+
+            // Verificar se tem imagem e deletar do Cloudinary
+            if (!string.IsNullOrEmpty(produto.Img))
+            {
+                try
+                {
+                    await _cloudinary.DeleteImageAsync(produto.Img);
+                }
+                catch (Exception ex)
+                {
+                    // Loga o erro ou trata conforme seu fluxo
+                    Console.WriteLine($"Erro ao deletar imagem: {ex.Message}");
+                }
+            }
+
+
+            return Ok(new
+            {
+                id = produto.Id,
+                message = "Produto excluído com sucesso!"
+            });
         }
     }
 }

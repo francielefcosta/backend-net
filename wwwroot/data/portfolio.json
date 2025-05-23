@@ -66,7 +66,7 @@
         "url": "/dashboard/capa-dashboard.png",
         "alt": "Protótipo funcional de um Painel de Administração do E-commerce"
       },
-      "description": "Painel admin React que consome uma API .NET para realizar operações CRUD em produtos armazenados no MongoDB. Permite gerenciamento completo dos itens do e-commerce."
+      "description": "Painel React + Next com CRUD via .NET, MongoDB e imagens no Cloudinary. Atualiza o site de compras automaticamente via API com revalidate."
     },
     {
       "slug": "react-store",
@@ -76,7 +76,7 @@
         "url": "/store/capa-store.png",
         "alt": "Protótipo funcional de e-commerce com catálogo simulado, carrinho e checkout"
       },
-      "description": "Protótipo de e-commerce com frontend em React e backend em .NET. Os produtos são gerenciados por uma API integrada ao MongoDB, com operações CRUD realizadas por meio de um painel administrativo."
+      "description": "Frontend React com requisições para API .NET. Simula fluxo de login e finalização de compra com produtos dinâmicos via painel admin."
     },
     {
       "slug": "vr-3d-game",

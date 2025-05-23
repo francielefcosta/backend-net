@@ -30,12 +30,19 @@ namespace MyProject.Models
     }
 
     [BsonIgnoreExtraElements]
-    public class CreateProductDto
+    public class ProductDto
     {
         public string Name { get; set; } = string.Empty;
-        public decimal Price { get; set; }
+        public string Price { get; set; } = "0";
         public string Description { get; set; } = string.Empty;
         public int Quantity { get; set; }
-        public IFormFile Img { get; set; } = null!;
+        public IFormFile? Img { get; set; }
+        public string AdminPassword { get; set; } = string.Empty;
+    }
+
+    [BsonIgnoreExtraElements]
+    public class ProductDelete
+    {
+        public string AdminPassword { get; set; } = string.Empty;
     }
 }

@@ -26,8 +26,20 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 
+//Registrar MongoDbService 
 builder.Services.AddSingleton<MongoDbService>(sp =>
     new MongoDbService(mongoConnectionString, databaseName));
+
+
+var cloudinaryUrl = Environment.GetEnvironmentVariable("CLOUDINARY_URL");
+
+if (string.IsNullOrEmpty(cloudinaryUrl))
+{
+    throw new Exception("CLOUDINARY_URL não encontrada");
+}
+
+//Registrar CloudinaryService
+builder.Services.AddSingleton<CloudinaryService>(sp => new CloudinaryService(cloudinaryUrl));
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -55,7 +67,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
-     c.RoutePrefix = string.Empty; 
+    c.RoutePrefix = string.Empty;
 });
 
 app.MapControllers();
