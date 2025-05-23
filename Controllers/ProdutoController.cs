@@ -22,55 +22,40 @@ namespace MyProject.Controllers
         }
 
         [HttpPost("CreateProduct")]
-        public async Task<IActionResult> CreateProduct()
+        public async Task<IActionResult> CreateProduct([FromForm] ProductDto dto)
         {
             var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
 
-            var form = HttpContext.Request.Form;
-
-            var senha = form["AdminPassword"].ToString();
-            var name = form["Name"].ToString();
-            var description = form["Description"].ToString();
-            var priceString = form["Price"].ToString();
-            var quantityString = form["Quantity"].ToString();
-
-            bool isValidPrice = decimal.TryParse(priceString, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal precoDecimal);
-            bool isValidQuantity = int.TryParse(quantityString, out var quantity);
-
-            if (!isValidPrice || !isValidQuantity)
+            if (!decimal.TryParse(dto.Price, NumberStyles.Number, CultureInfo.InvariantCulture, out var precoDecimal) ||
+                dto.Quantity < 0)
             {
                 return BadRequest("Preço ou quantidade inválidos.");
             }
 
-            // 🔐 Se a senha estiver incorreta, retorna fake
-            if (senha != senhaCerta)
+            if (dto.AdminPassword != senhaCerta)
             {
                 var productFake = new Product
                 {
                     Id = ObjectId.GenerateNewId().ToString(),
-                    Name = name,
+                    Name = dto.Name,
                     Price = precoDecimal,
-                    Description = description,
-                    Quantity = quantity,
+                    Description = dto.Description,
+                    Quantity = dto.Quantity,
                     Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
                 };
 
                 return Ok(productFake);
             }
 
-            // 🎯 Aqui a senha está certa, então seguimos com o binding completo
-            var img = form.Files.GetFile("Img");
-
-            if (img == null || img.Length == 0)
+            if (dto.Img == null || dto.Img.Length == 0)
             {
                 return BadRequest("Imagem não encontrada.");
             }
 
             string imageUrl;
-
             try
             {
-                imageUrl = await _cloudinary.UploadImageAsync(img);
+                imageUrl = await _cloudinary.UploadImageAsync(dto.Img);
             }
             catch (Exception ex)
             {
@@ -79,10 +64,10 @@ namespace MyProject.Controllers
 
             var product = new Product
             {
-                Name = name,
+                Name = dto.Name,
                 Price = precoDecimal,
-                Description = description,
-                Quantity = quantity,
+                Description = dto.Description,
+                Quantity = dto.Quantity,
                 Img = imageUrl
             };
 
@@ -91,38 +76,27 @@ namespace MyProject.Controllers
             return CreatedAtAction(nameof(CreateProduct), new { id = product.Id }, product);
         }
 
-        
+
         [HttpPut("UpdateProductId/{id}")]
-        public async Task<IActionResult> Put(string id)
+        public async Task<IActionResult> Put(string id, [FromForm] ProductDto dto)
         {
             var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
 
-            var form = HttpContext.Request.Form;
-
-            var senha = form["AdminPassword"].ToString();
-            var name = form["Name"].ToString();
-            var description = form["Description"].ToString();
-            var priceString = form["Price"].ToString();
-            var quantityString = form["Quantity"].ToString();
-
-            bool isValidPrice = decimal.TryParse(priceString, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal precoDecimal);
-            bool isValidQuantity = int.TryParse(quantityString, out var quantity);
-
-            if (!isValidPrice || !isValidQuantity)
+            if (!decimal.TryParse(dto.Price, NumberStyles.Number, CultureInfo.InvariantCulture, out var precoDecimal) ||
+                dto.Quantity < 0)
             {
                 return BadRequest("Preço ou quantidade inválidos.");
             }
 
-            // 🔐 Se a senha estiver incorreta, retorna fake
-            if (senha != senhaCerta)
+            if (dto.AdminPassword != senhaCerta)
             {
                 var productFake = new Product
                 {
                     Id = id,
-                    Name = name,
+                    Name = dto.Name,
                     Price = precoDecimal,
-                    Description = description,
-                    Quantity = quantity,
+                    Description = dto.Description,
+                    Quantity = dto.Quantity,
                     Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
                 };
 
@@ -133,19 +107,16 @@ namespace MyProject.Controllers
             var produtoExistente = await colecao.Find(p => p.Id == id).FirstOrDefaultAsync();
 
             if (produtoExistente == null)
-            {
                 return NotFound();
-            }
 
             string imgUrl = produtoExistente.Img;
-            var img = form.Files.GetFile("Img");
 
-            if (img != null && img.Length > 0)
+            if (dto.Img != null && dto.Img.Length > 0)
             {
                 try
                 {
                     await _cloudinary.DeleteImageAsync(produtoExistente.Img);
-                    imgUrl = await _cloudinary.UploadImageAsync(img);
+                    imgUrl = await _cloudinary.UploadImageAsync(dto.Img);
                 }
                 catch (Exception ex)
                 {
@@ -156,22 +127,19 @@ namespace MyProject.Controllers
             var product = new Product
             {
                 Id = produtoExistente.Id,
-                Name = name,
+                Name = dto.Name,
                 Price = precoDecimal,
-                Description = description,
-                Quantity = quantity,
+                Description = dto.Description,
+                Quantity = dto.Quantity,
                 Img = imgUrl
             };
 
             var resultado = await colecao.ReplaceOneAsync(p => p.Id == id, product);
             if (resultado.MatchedCount == 0)
-            {
                 return NotFound();
-            }
 
             return Ok(product);
         }
-
 
         // GET api/produto
         [HttpGet("GetProducts")]
