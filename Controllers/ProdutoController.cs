@@ -218,8 +218,6 @@ namespace MyProject.Controllers
         [HttpDelete("DeleteProductId/{id}")]
         public async Task<IActionResult> Delete(string id, [FromBody] ProductDelete adm)
         {
-            Console.WriteLine(adm.AdminPassword);
-
             var senhaCerta = Environment.GetEnvironmentVariable("AdminSettings__Password");
 
             // Se a senha for diferente, não faz nada e responde OK (fake)
