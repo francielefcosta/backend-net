@@ -110,12 +110,6 @@ C:\Users\franc\repos\backend-net\obj\Debug\net9.0\scopedcss\bundle\backend.style
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets\msbuild.build.backend.props
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.backend.props
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.backend.props
-C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.pack.json
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.csproj.Up2Date
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\backend.dll
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\refint\backend.dll
@@ -129,3 +123,4 @@ C:\Users\franc\repos\backend-net\bin\Debug\net9.0\package-lock.json
 C:\Users\franc\repos\backend-net\bin\Debug\net9.0\CloudinaryDotNet.dll
 C:\Users\franc\repos\backend-net\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\franc\repos\backend-net\obj\Debug\net9.0\compressed\z9ugkzmvuz-pwg9sk7qmm.gz
+C:\Users\franc\repos\backend-net\obj\Debug\net9.0\staticwebassets.build.json.cache

@@ -141,13 +141,64 @@ namespace MyProject.Controllers
             return Ok(product);
         }
 
-        // GET api/produto
+        //GET api/produto
         [HttpGet("GetProducts")]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10,
+            [FromQuery] string? search = null)
         {
+            if (page <= 0 || pageSize <= 0)
+            {
+                return BadRequest("Page e PageSize precisam ser maiores que zero.");
+            }
+
             var colecao = _mongoDbService.GetCollection<Product>("products");
-            var produtos = await colecao.Find(p => true).ToListAsync();
-            return Ok(produtos);
+
+            // Filtro de busca
+            var filtro = Builders<Product>.Filter.Empty;
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                filtro = Builders<Product>.Filter.Regex("Name", new BsonRegularExpression(search, "i"));
+            }
+
+            var skip = (page - 1) * pageSize;
+
+            bool fallbackToAll = false;
+
+            var produtos = await colecao.Find(filtro)
+                                        .Skip(skip)
+                                        .Limit(pageSize)
+                                        .ToListAsync();
+
+            // Se não achou nada e tem filtro ativo, tenta de novo com filtro vazio
+            if (produtos.Count == 0)
+            {
+                filtro = Builders<Product>.Filter.Empty;
+                skip = 0;
+                page = 1;
+                fallbackToAll = true;
+
+                produtos = await colecao.Find(p => true)
+                                        .Skip(skip)
+                                        .Limit(pageSize)
+                                        .ToListAsync();
+            }
+
+            var total = await colecao.CountDocumentsAsync(filtro);
+
+            var resultado = new
+            {
+                currentPage = page,
+                pageSize,
+                totalItems = total,
+                totalPages = (int)Math.Ceiling((double)total / pageSize),
+                data = produtos,
+                fallbackToAll
+            };
+
+            return Ok(resultado);
         }
 
         // GET api/produto/{id}
