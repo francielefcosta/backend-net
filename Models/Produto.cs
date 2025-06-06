@@ -27,6 +27,9 @@ namespace MyProject.Models
         [BsonElement("quantity")]
         public int Quantity { get; set; }
 
+        [BsonElement("isFake")]
+        public bool IsFake { get; set; }
+
     }
 
     [BsonIgnoreExtraElements]
@@ -38,6 +41,7 @@ namespace MyProject.Models
         public int Quantity { get; set; }
         public IFormFile? Img { get; set; }
         public string AdminPassword { get; set; } = string.Empty;
+        public bool IsFake { get; set; }
     }
 
     [BsonIgnoreExtraElements]

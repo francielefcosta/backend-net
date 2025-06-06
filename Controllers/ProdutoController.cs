@@ -41,6 +41,7 @@ namespace MyProject.Controllers
                     Price = precoDecimal,
                     Description = dto.Description,
                     Quantity = dto.Quantity,
+                    IsFake = true,
                     Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
                 };
 
@@ -68,6 +69,7 @@ namespace MyProject.Controllers
                 Price = precoDecimal,
                 Description = dto.Description,
                 Quantity = dto.Quantity,
+                IsFake = false,
                 Img = imageUrl
             };
 
@@ -97,6 +99,7 @@ namespace MyProject.Controllers
                     Price = precoDecimal,
                     Description = dto.Description,
                     Quantity = dto.Quantity,
+                    IsFake = true,
                     Img = "https://res.cloudinary.com/dzjynsyhg/image/upload/v1747883911/samples/cloudinary-logo-vector.svg"
                 };
 
@@ -131,6 +134,7 @@ namespace MyProject.Controllers
                 Price = precoDecimal,
                 Description = dto.Description,
                 Quantity = dto.Quantity,
+                IsFake = false,
                 Img = imgUrl
             };
 
