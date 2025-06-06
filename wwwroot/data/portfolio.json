@@ -80,13 +80,13 @@
     },
     {
       "slug": "vr-3d-game",
-      "name": "Jogo 3D com A-Frame",
+      "name": "Jogo 3D com React Three Fiber",
       "url": "/three",
       "image": {
         "url": "/aframe/three.png",
         "alt": "Experiência interativa em WebGL com coleta de objetos em ambiente 3D"
       },
-      "description": "Experiência interativa usando A-Frame e WebGL, com movimentação em um ambiente 3D e coleta de objetos. Ideal para explorar conceitos de realidade virtual no navegador."
+      "description": "Experiência interativa usando React Three Fiber e WebGL, com movimentação em um ambiente 3D e coleta de objetos. Ideal para explorar conceitos de realidade virtual no navegador."
     },
     {
       "slug": "pacman-clone",
