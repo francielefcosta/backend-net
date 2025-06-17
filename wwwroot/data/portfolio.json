@@ -98,5 +98,17 @@
       },
       "description": "Recriação do clássico Pac-Man feita com JavaScript puro, aplicando lógica de movimentação, colisão e pontuação em um layout responsivo e divertido."
     }
+  ],
+  "projectsExternal": [
+    {
+      "slug": "react-native-restaurant",
+      "name": "App de Restaurante em React Native",
+      "url": "https://demoreactnative.vercel.app/",
+      "image": {
+        "url": "/reactnative/restaurante-demo.png",
+        "alt": "Aplicativo de restaurante com cardápio, carrinho e finalização de pedido"
+      },
+      "description": "Feito com React Native, usando Tailwind CSS para estilização e Redux para gerenciamento de estado. O app simula um cardápio com escolha de pratos, carrinho e finalização de pedido."
+    }
   ]
 }
